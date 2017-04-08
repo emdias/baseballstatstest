@@ -1,7 +1,7 @@
 class CreatePlayerSeasonStats < ActiveRecord::Migration
   def change
     create_table :player_season_stats do |t|
-      t.string :player_id
+      t.integer :player_id
       t.string :league
       t.string :division
       t.string :year

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+XmlService.upload_xml('http://www.cafeconleche.org/examples/baseball/1998statistics.xml')

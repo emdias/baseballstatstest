@@ -13,8 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20170408150800) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "player_season_stats", force: :cascade do |t|
-    t.string  "player_id"
+    t.integer "player_id"
     t.string  "league"
     t.string  "division"
     t.string  "year"
