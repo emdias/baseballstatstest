@@ -6,7 +6,7 @@
     <th><%= sort_link @q, :team_city, {}, remote: true %></th>
     <th><%= sort_link @q, :team_name, {}, remote: true %></th>
     <th><%= sort_link @q, :position, {}, remote: true %></th>
-    <th><%= sort_link @q, :avg, 'AVG', default_order: :asc, remote: true %></th>
+    <th><%= sort_link @q, :avg, 'AVG', {default_order: :asc}, remote: true %></th>
     <th><%= sort_link @q, :hr, 'HR', {}, remote: true  %></th>
     <th><%= sort_link @q, :rbi, 'RBI', {}, remote: true  %></th>
     <th><%= sort_link @q, :runs, 'RUNS', {}, remote: true  %></th>
