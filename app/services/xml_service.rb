@@ -45,7 +45,7 @@ class XmlService
 
             team.css('PLAYER').each do |player|
               at_bats = value(player, 'AT_BATS')
-              next if at_bats.blank?
+              next if at_bats.blank? || at_bats.to_i.zero?
               p = Player.find_or_create_by(surname: value(player, 'SURNAME'),
                                            given_name: value(player, 'GIVEN_NAME'))
 
