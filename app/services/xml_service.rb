@@ -44,6 +44,8 @@ class XmlService
             team_name = value(team, 'TEAM_NAME')
 
             team.css('PLAYER').each do |player|
+              at_bats = value(player, 'AT_BATS')
+              next if at_bats.blank?
               p = Player.find_or_create_by(surname: value(player, 'SURNAME'),
                                            given_name: value(player, 'GIVEN_NAME'))
 
@@ -61,7 +63,7 @@ class XmlService
               pss.sb              = value(player, 'STEALS')
               pss.games           = value(player, 'GAMES')
               pss.games_started   = value(player, 'GAMES_STARTED')
-              pss.at_bats         = value(player, 'AT_BATS')
+              pss.at_bats         = at_bats
               pss.hits            = value(player, 'HITS')
               pss.doubles         = value(player, 'DOUBLES')
               pss.triples         = value(player, 'TRIPLES')

@@ -4,5 +4,5 @@
 </div>
 
 <div class="row">
-  <%= will_paginate @players, params: {q: params[:q]} %>
+  <%= render partial: 'layouts/pagination_partial', locals: {collection: @players} %>
 </div>

@@ -7,12 +7,17 @@ class PlayerSeasonStat < ActiveRecord::Base
     "#{player.surname}, #{player.given_name}"
   end
 
+  %w(avg ops).each do |calc|
+    define_method calc do
+      self[calc.to_sym].nan? ? nil : self[calc.to_sym]
+    end
+  end
+
 
   def calculate_stats
     unless at_bats.blank? || at_bats < 0
       # Batting Average
       self.avg = (hits.to_f / at_bats.to_f).round(3)
-
       # On-base Plus Slugging
       tb = (hits + (doubles * 2) + (triples * 3) + (hr * 4)).to_f
       slg = tb/at_bats.to_f

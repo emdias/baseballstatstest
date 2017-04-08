@@ -1,1 +1,2 @@
 $("#player_statistics").html("<%= escape_javascript(render(partial: 'stats_table')) %>");
+$("#pagination").html("<%= escape_javascript(render(partial: 'layouts/pagination_partial', locals: {collection: @players})) %>");
