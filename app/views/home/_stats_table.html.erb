@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <th><%= sort_link @q, :player_surname, 'Player Name', {}, remote: true %></th>
+    <th><%= sort_link @q, :league, {}, remote: true %></th>
+    <th><%= sort_link @q, :division, {}, remote: true %></th>
+    <th><%= sort_link @q, :team_city, {}, remote: true %></th>
+    <th><%= sort_link @q, :team_name, {}, remote: true %></th>
+    <th><%= sort_link @q, :position, {}, remote: true %></th>
+    <th><%= sort_link @q, :avg, 'AVG', default_order: :asc, remote: true %></th>
+    <th><%= sort_link @q, :hr, 'HR', {}, remote: true  %></th>
+    <th><%= sort_link @q, :rbi, 'RBI', {}, remote: true  %></th>
+    <th><%= sort_link @q, :runs, 'RUNS', {}, remote: true  %></th>
+    <th><%= sort_link @q, :sb, 'SB', {}, remote: true  %></th>
+    <th><%= sort_link @q, :ops, 'OPS', {}, remote: true  %></th>
+  </tr>
+
+  <% @players.each do |p| %>
+    <tr>
+      <td><%= p.player_name %></td>
+      <td><%= p.league %></td>
+      <td><%= p.division %></td>
+      <td><%= p.team_city %></td>
+      <td><%= p.team_name %></td>
+      <td><%= p.position %></td>
+      <td><%= p.avg || '-' %></td>
+      <td><%= p.hr || '-' %></td>
+      <td><%= p.rbi || '-' %></td>
+      <td><%= p.runs || '-' %></td>
+      <td><%= p.sb || '-' %></td>
+      <td><%= p.ops || '-' %></td>
+    </tr>
+  <% end %>
+</table>

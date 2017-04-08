@@ -1,0 +1,8 @@
+
+<div class="row" id="player_statistics">
+  <%= render partial: 'stats_table' %>
+</div>
+
+<div class="row">
+  <%= will_paginate @players, params: {q: params[:q]} %>
+</div>
